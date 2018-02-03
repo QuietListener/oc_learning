@@ -10,6 +10,7 @@
 
 #import  "c2_fraction.h"
 #import  "c8_rectangle.h"
+#import   "c11_fraction+mathops.h"
 
 //第二单元
 void test_c3()
@@ -110,7 +111,7 @@ void test_c9()
     }
 }
 
-//第9单元，多态、动态类型、动态绑定
+//c10
 void test_c10()
 {
     //data中可以存储所有类型的对象
@@ -132,6 +133,23 @@ void test_c10()
     NSLog(@"Fractions allocated: %i",[Fraction count]);
     
 }
+
+
+//c11分类和协议
+void test_c11()
+{
+    NSLog(@"\r\n==============test_c11==================\r\n");
+  
+    Fraction * a, * b;
+    a = [[Fraction alloc] initWith:1 denomiator:2];
+    b = [[Fraction alloc] initWith:2 denomiator:3];
+    Fraction * r =  [a mul:b];
+    NSLog(@"Fractions mul");
+    r.print;
+    
+}
+
+
 int main(int argc,char * argv[])
 {
     //@autoreleasepool 自动释放池:在应用创建新对象时，系统能有效管理应用所使用的内存
@@ -140,6 +158,7 @@ int main(int argc,char * argv[])
 //        test_c3();
 //        test_c8();
 //        test_c9();
-        test_c10();
+//        test_c10();
+        test_c11();
     }
 }
